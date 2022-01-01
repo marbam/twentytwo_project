@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\DateEntryController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,16 +14,21 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-// Route::get('/', function () {
-//     return view('welcome');
-// });
-
 Route::get('/', function () {
     return view('welcome');
-})->middleware(['approved']);
+});
 
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth'])->name('dashboard');
 
+
+Route::middleware(['auth', 'approved'])->group(function () {
+    Route::get('/dates', [DateEntryController::class, 'index']);
+    Route::get('/dates/add', [DateEntryController::class, 'create_today']);
+    Route::get('/dates/add/{y}/{m}/{d}', [DateEntryController::class, 'create']);
+});
+
 require __DIR__.'/auth.php';
+
+
