@@ -77,49 +77,4 @@ class DateEntryController extends Controller
         $record->save();
         return view('dates.saved');
     }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\DateEntry  $dateEntry
-     * @return \Illuminate\Http\Response
-     */
-    public function show(DateEntry $dateEntry)
-    {
-        return view('dates.date');
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\DateEntry  $dateEntry
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(DateEntry $dateEntry)
-    {
-        return view('dates.date');
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\DateEntry  $dateEntry
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, DateEntry $dateEntry)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Models\DateEntry  $dateEntry
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(DateEntry $dateEntry)
-    {
-        //
-    }
 }
