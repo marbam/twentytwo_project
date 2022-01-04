@@ -27,7 +27,8 @@ class DateEntryController extends Controller
     {
         $data['date'] = Carbon::today();
         $dateymd = $data['date']->format('Y-m-d');
-        $data['entry'] = DateEntry::firstOrCreate(['date' => $dateymd]);
+        $data['record'] = DateEntry::firstOrCreate(['date' => $dateymd]);
+        $data['heading'] = $data['date']->isoFormat('dddd, MMM Do YYYY');
         return view('dates.date', ['data' => $data]);
     }
 
@@ -39,7 +40,11 @@ class DateEntryController extends Controller
      */
     public function create($y, $m, $d)
     {
-        return view('dates.date');
+        $data['date'] = Carbon::createFromFormat('Y-m-d', "$y-$m-$d");
+        $dateymd = $data['date']->format('Y-m-d');
+        $data['record'] = DateEntry::firstOrCreate(['date' => $dateymd]);
+        $data['heading'] = $data['date']->isoFormat('dddd, MMM Do YYYY');
+        return view('dates.date', ['data' => $data]);
     }
 
     /**
@@ -50,7 +55,26 @@ class DateEntryController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $record = DateEntry::findOrFail($request->id);
+        $texts = ['description', 'highlight', 'movies', 'shows', 'games', 'books'];
+        $checks = ['exercises', 'walked'];
+
+        foreach ($texts as $field) {
+            if ($request[$field]) {
+                $record[$field] = $request[$field];
+            }
+        }
+
+        foreach ($checks as $field) {
+            $record[$field] = 0;
+            if ($request[$field]) {
+                $record[$field] = 1;
+            }
+        }
+
+        $record['populated'] = 1;
+
+        $record->save();
     }
 
     /**
