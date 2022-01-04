@@ -16,6 +16,7 @@ class CreateDateEntriesTable extends Migration
         Schema::create('date_entries', function (Blueprint $table) {
             $table->id();
             $table->date('date');
+            $table->unsignedInteger('user_id');
             $table->boolean('populated')->default(false);
             $table->text('description')->default('');
             $table->text('highlight')->default('');

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Auth;
 use Carbon\Carbon;
 use App\Models\DateEntry;
 use Illuminate\Http\Request;
@@ -27,7 +28,7 @@ class DateEntryController extends Controller
     {
         $data['date'] = Carbon::today();
         $dateymd = $data['date']->format('Y-m-d');
-        $data['record'] = DateEntry::firstOrCreate(['date' => $dateymd]);
+        $data['record'] = DateEntry::firstOrCreate(['date' => $dateymd, 'user_id' => Auth::id()]);
         $data['heading'] = $data['date']->isoFormat('dddd, MMM Do YYYY');
         return view('dates.date', ['data' => $data]);
     }
@@ -42,7 +43,7 @@ class DateEntryController extends Controller
     {
         $data['date'] = Carbon::createFromFormat('Y-m-d', "$y-$m-$d");
         $dateymd = $data['date']->format('Y-m-d');
-        $data['record'] = DateEntry::firstOrCreate(['date' => $dateymd]);
+        $data['record'] = DateEntry::firstOrCreate(['date' => $dateymd, 'user_id' => Auth::id()]);
         $data['heading'] = $data['date']->isoFormat('dddd, MMM Do YYYY');
         return view('dates.date', ['data' => $data]);
     }

@@ -10,6 +10,7 @@ class DateEntry extends Model
     use HasFactory;
     protected $fillable = [
         'date',
+        'user_id',
         'populated',
         "description",
         "highlight",
