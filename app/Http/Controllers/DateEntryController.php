@@ -75,6 +75,7 @@ class DateEntryController extends Controller
         $record['populated'] = 1;
 
         $record->save();
+        return view('dates.saved');
     }
 
     /**
