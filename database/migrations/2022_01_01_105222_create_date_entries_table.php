@@ -18,12 +18,12 @@ class CreateDateEntriesTable extends Migration
             $table->date('date');
             $table->unsignedInteger('user_id');
             $table->boolean('populated')->default(false);
-            $table->text('description')->default('');
-            $table->text('highlight')->default('');
-            $table->text('movies')->default('');
-            $table->text('shows')->default('');
-            $table->text('games')->default('');
-            $table->text('books')->default('');
+            $table->text('description');
+            $table->text('highlight');
+            $table->text('movies');
+            $table->text('shows');
+            $table->text('games');
+            $table->text('books');
             $table->boolean('exercises')->default(false);
             $table->boolean('walked')->default(false);
             $table->timestamps();
