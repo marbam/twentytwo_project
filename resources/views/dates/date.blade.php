@@ -1,49 +1,85 @@
-<h1>Date: {{ $data['heading'] }}</h1>
+@extends('layouts.master')
 
-@php
-    $prev = $data['date']->clone()->subDays(1);
-    $next = $data['date']->clone()->addDays(1);
-@endphp
+@section('content')
+    <div class="w-80 bg-green-300">
+        <h1 class="text-xl">Date: {{ $data['heading'] }}</h1>
 
-<a href="/dates/add/{{$prev->format('Y/m/d')}}"><< {{ $prev->isoFormat('ddd Do MMM') }}</a>
-<a href="/dates/add/{{$next->format('Y/m/d')}}">   {{ $next->isoFormat('ddd Do MMM') }} >></a>
+        @php
+            $prev = $data['date']->clone()->subDays(1);
+            $next = $data['date']->clone()->addDays(1);
+        @endphp
 
-<form method="POST">
+        <a class="bg-blue-500 text-white rounded p-1 m-1" href="/dates/add/{{$prev->format('Y/m/d')}}"><< {{ $prev->isoFormat('ddd Do MMM') }}</a>
+        <a class="bg-blue-500 text-white rounded p-1 m-1" href="/dates/add/{{$next->format('Y/m/d')}}">   {{ $next->isoFormat('ddd Do MMM') }} >></a>
 
-    @csrf
-    <input type="hidden" name="id" value={{ $data["record"]["id"] }}>
+        <form method="POST">
 
-    <label for="description">Brief Description</label>
-    <textarea name="description" id="description">{{$data['record']->description}}</textarea>
-    <br>
+            @csrf
+            <input type="hidden" name="id" value={{ $data["record"]["id"] }}>
 
-    <label for="highlight">Highlight</label>
-    <textarea name="highlight" id="highlight">{{$data['record']->highlight}}</textarea>
-    <br>
+            <label for="description" class="form-label inline-block mb-2 text-gray-700">Description</label>
+            <textarea
+            id="description"
+            name="description"
+            class="form-control block w-full px-3 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
+            rows="3"
+            >{{$data['record']->description}}</textarea>
 
-    <label for="movies">Movies</label>
-    <textarea name="movies" id="movies">{{$data['record']->movies}}</textarea>
-    <br>
+            <label for="highlight" class="form-label inline-block mb-2 text-gray-700">Highlight</label>
+            <textarea
+            id="highlight"
+            name="highlight"
+            class="form-control block w-full px-3 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
+            rows="3"
+            >{{$data['record']->highlight}}</textarea>
 
-    <label for="shows">Shows</label>
-    <textarea name="shows" id="shows">{{$data['record']->shows}}</textarea>
-    <br>
+            <label for="movies" class="form-label inline-block mb-2 text-gray-700">Movies</label>
+            <textarea
+            id="movies"
+            name="movies"
+            class="form-control block w-full px-3 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
+            rows="3"
+            >{{$data['record']->movies}}</textarea>
 
-    <label for="games">Games</label>
-    <textarea name="games" id="games">{{$data['record']->games}}</textarea>
-    <br>
+            <label for="shows" class="form-label inline-block mb-2 text-gray-700">Shows</label>
+            <textarea
+            id="shows"
+            name="shows"
+            class="form-control block w-full px-3 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
+            rows="3"
+            >{{$data['record']->shows}}</textarea>
 
-    <label for="books">Books</label>
-    <textarea name="books" id="books">{{$data['record']->books}}</textarea>
-    <br>
+            <label for="games" class="form-label inline-block mb-2 text-gray-700">Games</label>
+            <textarea
+            id="games"
+            name="games"
+            class="form-control block w-full px-3 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
+            rows="3"
+            >{{$data['record']->games}}</textarea>
 
-    <label for="exercises">Did Exercises</label>
-    <input type="checkbox" name="exercises" id="exercises" {{$data['record']->exercises ? 'checked' : null }} />
-    <br>
+            <label for="books" class="form-label inline-block mb-2 text-gray-700">Books</label>
+            <textarea
+            id="books"
+            name="books"
+            class="form-control block w-full px-3 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
+            rows="3"
+            >{{$data['record']->books}}</textarea>
 
-    <label for="walked">Went for Walk</label>
-    <input type="checkbox" name="walked" id="walked" {{$data['record']->walked ? 'checked' : null }} />
+            <label for="exercises">Did Exercises</label>
+            <input type="checkbox" name="exercises" id="exercises" {{$data['record']->exercises ? 'checked' : null }} />
+            <br>
 
-    <br>
-    <button type="submit">Save</button>
-</form>
+            <label for="walked">Went for Walk</label>
+            <input type="checkbox" name="walked" id="walked" {{$data['record']->walked ? 'checked' : null }} />
+
+            <br>
+            <button class="bg-blue-500 text-white rounded p-1 m-1" type="submit">Save</button>
+        </form>
+
+    </div>
+
+
+
+
+
+@endsection
