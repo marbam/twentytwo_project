@@ -13,6 +13,7 @@
                 where('date', '>=', $start)
                 ->where('date', '<=', $end)
                 ->whereNotNull('movies')
+                ->where('movies', '!=', '')
                 ->orderBy('date', 'ASC')
                 ->get();
 
