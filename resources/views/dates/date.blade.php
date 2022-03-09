@@ -66,11 +66,17 @@
             >{{$data['record']->books}}</textarea>
 
             <label for="exercises">Did Exercises</label>
-            <input type="checkbox" name="exercises" id="exercises" {{$data['record']->exercises ? 'checked' : null }} />
+            <input
+                class="h-4 w-4 border border-gray-300 rounded-sm bg-white checked:bg-blue-600 checked:border-blue-600 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer"
+                type="checkbox" name="exercises" id="exercises" {{$data['record']->exercises ? 'checked' : null }}
+            />
             <br>
 
             <label for="walked">Went for Walk</label>
-            <input type="checkbox" name="walked" id="walked" {{$data['record']->walked ? 'checked' : null }} />
+            <input
+                class="h-4 w-4 border border-gray-300 rounded-sm bg-white checked:bg-blue-600 checked:border-blue-600 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer"
+                type="checkbox" name="walked" id="walked" {{$data['record']->walked ? 'checked' : null }}
+            />
 
             <br>
             <button class="bg-blue-500 text-white rounded p-1 m-1" type="submit">Save</button>
