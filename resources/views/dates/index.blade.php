@@ -2,8 +2,6 @@
 
 @section('content')
 
-<p>Hello</p>
-
 <a href="/dates/add">Add a new Entry</a>
 
 <?php
@@ -60,7 +58,7 @@
     }
 ?>
 
-<h2>Recent Dates</h2>
+<h2 class="text-lg font-bold pt-2">Recent Dates</h2>
 <table class="mt-2">
     <thead class="border border-gray-300 rounded bg-gray-200">
         <th>Date</th>
@@ -70,7 +68,11 @@
     <tbody>
     @foreach($recent_days as $date => $data)
         <tr class="border border-gray-300">
-            <td>{{$date}}</td>
+            @php
+                $carb = \Carbon\Carbon::createFromFormat('D dS M Y', $date.date("Y"));
+                $link = "/dates/add/".$carb->format('Y/m/d');
+            @endphp
+            <td><a href="{{$link}}">{{$date}}</td>
             @if(!$data)
                 <td class="bg-red-100">No entry</td>
                 <td></td>
