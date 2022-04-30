@@ -15,7 +15,7 @@ class CronController extends Controller
 
         Log::debug('Retrieving Ecologi Data...');
 
-        $data = json_decode(file_get_contents('https://public.ecologi.com/users/martinbampton/impact'), true);
+        $data = json_decode(file_get_contents('https://public.ecologi.com/users/'.env('ECOLOGI_USERNAME').'/impact'), true);
         if ($data['trees']) {
             Setting::firstOrCreate(
                 ['key' => 'number_trees'],
