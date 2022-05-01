@@ -2,6 +2,10 @@
 
 @section('content')
 
+@if(isset($message))
+    <p>{{$message}}</p>
+@endif
+
 <a href="/dates/add">Add a new Entry</a>
 
 <?php

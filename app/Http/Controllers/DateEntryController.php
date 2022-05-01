@@ -27,17 +27,7 @@ class DateEntryController extends Controller
     public function create_today()
     {
         $data['date'] = Carbon::today();
-        $dateymd = $data['date']->format('Y-m-d');
-        $data['record'] = DateEntry::firstOrCreate(['date' => $dateymd, 'user_id' => Auth::id()],
-        [
-            'description' => '',
-            'highlight' => '',
-            'movies' => '',
-            'shows' => '',
-            'games' => '',
-            'books' => ''
-        ]);
-        $data['heading'] = $data['date']->isoFormat('dddd, MMM Do YYYY');
+        $data = array_merge($data, $this->prepare_date($data));
         return view('dates.date', ['data' => $data]);
     }
 
@@ -50,6 +40,11 @@ class DateEntryController extends Controller
     public function create($y, $m, $d)
     {
         $data['date'] = Carbon::createFromFormat('Y-m-d', "$y-$m-$d");
+        $data = array_merge($data, $this->prepare_date($data));
+        return view('dates.date', ['data' => $data]);
+    }
+
+    protected function prepare_date($data) {
         $dateymd = $data['date']->format('Y-m-d');
         $data['record'] = DateEntry::firstOrCreate(['date' => $dateymd, 'user_id' => Auth::id()],
         [
@@ -61,7 +56,7 @@ class DateEntryController extends Controller
             'books' => ''
         ]);
         $data['heading'] = $data['date']->isoFormat('dddd, MMM Do YYYY');
-        return view('dates.date', ['data' => $data]);
+        return $data;
     }
 
     /**
@@ -92,6 +87,10 @@ class DateEntryController extends Controller
         $record['populated'] = 1;
 
         $record->save();
-        return view('dates.saved');
+        return view('dates.index', ['message' => 'Date Saved!']);
+    }
+
+    public function test() {
+        return view('layouts.master');
     }
 }
