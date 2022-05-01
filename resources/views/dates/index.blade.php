@@ -37,6 +37,6 @@
     <p>{{\Carbon\Carbon::createFromFormat('Y-m-d', $date)->toFormattedDateString()}} => {{$movies}}</p>
 @endforeach
 
-@include('dates.recent');
+@include('dates.recent')
 
 @endsection

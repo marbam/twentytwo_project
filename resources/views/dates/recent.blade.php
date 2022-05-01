@@ -50,9 +50,14 @@
                         <div class="w-5 h-5 bg-red-500 rounded mr-1"></div>
                     @endif
                     @if ($data->walked)
-                        <div class="w-5 h-5 bg-green-500 rounded"></div>
+                        <div class="w-5 h-5 bg-green-500 rounded mr-1"></div>
                     @else
+                        <div class="w-5 h-5 bg-red-500 rounded mr-1"></div>
+                    @endif
+                    @if ($data->alcohol)
                         <div class="w-5 h-5 bg-red-500 rounded"></div>
+                    @else
+                        <div class="w-5 h-5 bg-green-500 rounded"></div>
                     @endif
                 </td>
             @endif
