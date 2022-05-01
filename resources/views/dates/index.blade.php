@@ -6,7 +6,7 @@
     <p>{{$message}}</p>
 @endif
 
-<a href="/dates/add">Add a new Entry</a>
+<a class="bg-green-300 p-3 m-3 block rounded text-center hover:bg-green-400" href="/dates/add">Add a new Entry</a>
 
 <?php
     // starting point for now, run with it in live and I'll adapt to a controller if/when I put a summary over several months in.
