@@ -18,7 +18,9 @@ class DateEntry extends Model
         "shows",
         "games",
         "books",
+        "learnings",
         "exercises",
         "walked",
+        "alcohol"
     ];
 }
