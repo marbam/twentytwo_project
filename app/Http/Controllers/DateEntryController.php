@@ -53,7 +53,8 @@ class DateEntryController extends Controller
             'movies' => '',
             'shows' => '',
             'games' => '',
-            'books' => ''
+            'books' => '',
+            'learnings' => '',
         ]);
         $data['heading'] = $data['date']->isoFormat('dddd, MMM Do YYYY');
         return $data;
@@ -68,8 +69,8 @@ class DateEntryController extends Controller
     public function store(Request $request)
     {
         $record = DateEntry::findOrFail($request->id);
-        $texts = ['description', 'highlight', 'movies', 'shows', 'games', 'books'];
-        $checks = ['exercises', 'walked'];
+        $texts = ['description', 'highlight', 'movies', 'shows', 'games', 'books', 'learnings'];
+        $checks = ['exercises', 'walked', 'alcohol'];
 
         foreach ($texts as $field) {
             if ($request[$field]) {

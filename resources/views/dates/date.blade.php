@@ -65,6 +65,14 @@
                 rows="3"
             >{{$data['record']->books}}</textarea>
 
+            <label for="learnings" class="form-label inline-block mb-2 text-gray-700">Learnings</label>
+            <textarea
+                id="learnings"
+                name="learnings"
+                class="form-control block w-full px-3 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
+                rows="3"
+            >{{$data['record']->learnings}}</textarea>
+
             <label for="exercises">Did Exercises</label>
             <input
                 class="h-4 w-4 border border-gray-300 rounded-sm bg-white checked:bg-blue-600 checked:border-blue-600 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer"
@@ -76,6 +84,13 @@
             <input
                 class="h-4 w-4 border border-gray-300 rounded-sm bg-white checked:bg-blue-600 checked:border-blue-600 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer"
                 type="checkbox" name="walked" id="walked" {{$data['record']->walked ? 'checked' : null }}
+            />
+
+            <br>
+            <label for="alcohol">Had a drink</label>
+            <input
+                class="h-4 w-4 border border-gray-300 rounded-sm bg-white checked:bg-blue-600 checked:border-blue-600 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer"
+                type="checkbox" name="alcohol" id="alcohol" {{$data['record']->alcohol ? 'checked' : null }}
             />
 
             <br>
