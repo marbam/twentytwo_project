@@ -19,50 +19,50 @@
 
             <label for="description" class="form-label inline-block mb-2 text-gray-700">Description</label>
             <textarea
-            id="description"
-            name="description"
-            class="form-control block w-full px-3 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
-            rows="3"
+                id="description"
+                name="description"
+                class="form-control block w-full px-3 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
+                rows="3"
             >{{$data['record']->description}}</textarea>
 
             <label for="highlight" class="form-label inline-block mb-2 text-gray-700">Highlight</label>
             <textarea
-            id="highlight"
-            name="highlight"
-            class="form-control block w-full px-3 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
-            rows="3"
+                id="highlight"
+                name="highlight"
+                class="form-control block w-full px-3 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
+                rows="3"
             >{{$data['record']->highlight}}</textarea>
 
             <label for="movies" class="form-label inline-block mb-2 text-gray-700">Movies</label>
             <textarea
-            id="movies"
-            name="movies"
-            class="form-control block w-full px-3 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
-            rows="3"
+                id="movies"
+                name="movies"
+                class="form-control block w-full px-3 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
+                rows="3"
             >{{$data['record']->movies}}</textarea>
 
             <label for="shows" class="form-label inline-block mb-2 text-gray-700">Shows</label>
             <textarea
-            id="shows"
-            name="shows"
-            class="form-control block w-full px-3 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
-            rows="3"
+                id="shows"
+                name="shows"
+                class="form-control block w-full px-3 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
+                rows="3"
             >{{$data['record']->shows}}</textarea>
 
             <label for="games" class="form-label inline-block mb-2 text-gray-700">Games</label>
             <textarea
-            id="games"
-            name="games"
-            class="form-control block w-full px-3 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
-            rows="3"
+                id="games"
+                name="games"
+                class="form-control block w-full px-3 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
+                rows="3"
             >{{$data['record']->games}}</textarea>
 
             <label for="books" class="form-label inline-block mb-2 text-gray-700">Books</label>
             <textarea
-            id="books"
-            name="books"
-            class="form-control block w-full px-3 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
-            rows="3"
+                id="books"
+                name="books"
+                class="form-control block w-full px-3 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
+                rows="3"
             >{{$data['record']->books}}</textarea>
 
             <label for="exercises">Did Exercises</label>
