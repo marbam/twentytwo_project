@@ -14,7 +14,7 @@ class AddLearningsAndDrinkFields extends Migration
     public function up()
     {
         Schema::table('date_entries', function (Blueprint $table) {
-            $table->text('learnings')->default('')->after('books');
+            $table->text('learnings')->after('books');
             $table->boolean('alcohol')->default(false)->after('walked');
         });
     }
