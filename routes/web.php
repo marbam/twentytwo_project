@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DateEntryController;
+use App\Http\Controllers\AssignController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -31,6 +33,8 @@ Route::middleware(['auth', 'approved'])->group(function () {
     Route::get('/dates/add/{y}/{m}/{d}', [DateEntryController::class, 'create']);
     Route::post('/dates/add/{y}/{m}/{d}', [DateEntryController::class, 'store']);
 });
+
+Route::get('/assign/game_options', [AssignController::class, 'getGameOptions']);
 
 require __DIR__.'/auth.php';
 
