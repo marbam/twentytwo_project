@@ -35,6 +35,7 @@ Route::middleware(['auth', 'approved'])->group(function () {
 });
 
 Route::get('/assign/game_options', [AssignController::class, 'getGameOptions']);
+Route::post('/assign/setup_game',   [AssignController::class, 'setupGame']);
 
 require __DIR__.'/auth.php';
 
