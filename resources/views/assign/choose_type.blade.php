@@ -3,7 +3,7 @@
 @section('content')
     <h1 class="text-red-500 text-xl">Choose a gametype!</h1>
 
-    @foreach($types as $type)
+    @foreach ($types as $type)
         <button class="type-button bg-gray-200 hover:bg-gray-300 p-3 rounded-lg m-2"
                 data-type_id="{{$type->id}}"
                 onclick="click_button(this)"

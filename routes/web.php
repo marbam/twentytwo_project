@@ -35,7 +35,11 @@ Route::middleware(['auth', 'approved'])->group(function () {
 });
 
 Route::get('/assign/game_options', [AssignController::class, 'getGameOptions']);
-Route::post('/assign/setup_game',   [AssignController::class, 'setupGame']);
+Route::post('/assign/setup_game',   [AssignController::class, 'makeGame']);
+Route::get('/assign/setup_game/{game}',   [AssignController::class, 'setupGame']);
+Route::post('/assign/submit_cards/{game}',   [AssignController::class, 'submitCards']);
+Route::post('/assign/player_cards/{game}',   [AssignController::class, 'showPlayerCards']);
+Route::post('/assign/choose_player_card/{game}',   [AssignController::class, 'choosePlayerCard']);
 
 require __DIR__.'/auth.php';
 
